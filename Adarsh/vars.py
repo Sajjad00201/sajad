@@ -9,10 +9,10 @@ load_dotenv()
 
 class Var(object):
     MULTI_CLIENT = False
-    API_ID = int(getenv('API_ID', '392800'))
-    API_HASH = str(getenv('API_HASH', 'f7f4316dac3b4959687b46860b44c265'))
-    BOT_TOKEN = str(getenv('BOT_TOKEN', '2045343811:AAH2YutndTCYokHpkk_rn83CeAivJSMIOa0'))
-    SESSION_NAME = str(getenv('SESSION_NAME', 'King7UpBot'))
+    API_ID = int(getenv('API_ID', '16612056'))
+    API_HASH = str(getenv('API_HASH', 'ae32caf162207865ff93b9b931b2ba54'))
+    BOT_TOKEN = str(getenv('BOT_TOKEN', '5312383797:AAEtdwbKIZ5CM9O5p8vHACpQ80UNJmYWczY'))
+    SESSION_NAME = str(getenv('SESSION_NAME', 'Sajjad_m7981bot'))
     SLEEP_THRESHOLD = int(getenv('SLEEP_THRESHOLD', '60'))
     WORKERS = int(getenv('WORKERS', '6'))
     BIN_CHANNEL = int(getenv('BIN_CHANNEL', '-1001797380077'))
