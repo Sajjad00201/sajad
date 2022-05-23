@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>%s</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.2/plyr.css">
+    <style>
+        .plyr--full-ui input[type=range] {
+            color: var(--player-hover-color);
+        }
+        
+         :root {
+            --bg-color: linear-gradient(-45deg, #7400b8, #6930c3, #5e60ce, #5390d9, #4ea8de, #48bfe3, #56cfe1, #64dfdf, #72efdd, #80ffdb);
+            --filename-color: white;
+            --footer-color: #fcc700;
+            --foot-color: rgb(37, 36, 36);
+            --footer-icon-color: var(--footer-font-color);
+            --player-border-color: #d3e0ea;
+            --player-hover-color: var(--footer-color);
+            --player-border-hover-color: red;
+            --plyr-color-main: red;
+            transition: 0.3s;
+        }
+        
+        body {
+            background-color: var(--foot-color);
+        }
+        
+        .plyr__control--overlaid {
+            background: #1E1E1E;
+        }
+        
+        .plyr--video .plyr__control.plyr__tab-focus,
+        .plyr--video .plyr__control:hover,
+        .plyr--video .plyr__control[aria-expanded=true] {
+            background: var(--player-hover-color);
+        }
+        
+        .plyr__control.plyr__tab-focus {
+            box-shadow: 0 0 0 5px;
+        }
+        
+        .plyr__menu__container .plyr__control[role=menuitemradio][aria-checked=true]::before {
+            background: violet;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="file-name" class="d-flex justify-content-center mt-2">
+            <h3 class="text-warning"> %s</h3>
+        </div>
+    </header>
+    <div class="container">
+        <tag src="%s" class="player"></tag>
+    </div>
+    <footer class="d-flex justify-content-center mt-2">
+        <a href="tg://resolve?domain=king_network7" class="btn btn-danger">Join Channel</a>
+    </footer>
+    <script src="https://cdn.plyr.io/3.7.2/plyr.js"></script>
+    <script>
+        const controls = [
+            'play-large',
+            'rewind',
+            'play',
+            'fast-forward',
+            'progress',
+            'current-time',
+            'duration',
+            'mute',
+            'volume',
+            'captions',
+            'settings',
+            'pip',
+            'airplay',
+            'download',
+            'fullscreen'
+        ];
+        document.addEventListener('DOMContentLoaded', () => {
+            const player = Plyr.setup('.player', {
+                controls
+            });
+        });
+
+        const body = document.querySelector('body');
+        const title = document.querySelector('#file-name');
+        const footer = document.querySelector('footer');
+        const toogle = document.querySelector('.toogle');
+        toogle.onclick = () => {
+            body.classList.toggle('dark')
+            footer.classList.toggle('dark')
+            title.classList.toggle('dark')
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
